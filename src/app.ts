@@ -27,6 +27,7 @@ class AppServer {
   }
 
   middlewares() {
+    this.app.use(session({ secret: "somevalue" }));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cookieParser());
